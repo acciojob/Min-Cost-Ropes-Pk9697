@@ -19,6 +19,6 @@ function mincost(arr)
 	return cost;
 }
 
-alert(mincost([4, 3, 2, 6]))
+// alert(mincost([4, 3, 2, 6]))
 
 module.exports=mincost;
