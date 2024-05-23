@@ -3,18 +3,22 @@ function mincost(arr)
 //write your code here
 // return the min cost
 	if(!arr || arr.length<=1) return 0;
-  arr.sort((a,b)=>a-b)
-
 	let cost=0;
-	let prefix=arr[0];
-	for(let i=1;i<arr.length;++i){
-		cost+=prefix+arr[i];
-		prefix+=arr[i];
+	
+
+	while(arr.length>1){
+		  arr.sort((a,b)=>b-a)
+		let curr=0
+		curr+=arr.pop();
+		curr+=arr.pop();
+		cost+=curr;
+
+		arr.push(curr)
 	}
 
-	return cost
+	return cost;
 }
 
-// alert(mincost([1, 2, 3, 4, 5]))
+alert(mincost([4, 3, 2, 6]))
 
 module.exports=mincost;
